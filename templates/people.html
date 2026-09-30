@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rex ISS Tracking Site | People in Space</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1> Rex's ISS Tracker </h1>
+    <h2> People Currently in Space : {{ number }} </h2>
+    <h2> People Currently in ISS : {{ number_iss }} </h2>
+    <h2> People Currently in Tiangong : {{ number_tiangong }} </h2>
+    {% for person in people %}
+        <p>{{ person.name }} : {{ person.craft }}</p>
+    {% endfor %}
+
+    <h1>People currently on ISS</h1>
+    {% for person in iss_people %}
+        <p>{{ person.name }} - {{ person.craft }}</p>
+    {% endfor %}
+
+    <h1>People currently on Tiangong</h1>
+    {% for person in Tiangong_people %}
+        <p>{{ person.name }} - {{ person.craft }}</p>
+    {% endfor %}
+</body>
+</html>
+
